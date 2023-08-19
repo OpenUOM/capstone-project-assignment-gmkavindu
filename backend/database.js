@@ -23,7 +23,7 @@ const dbinitialize = async () => {
 }
 
 const readTeachers = async () => {
-    const sql = `SELECT * FROM dummyData`
+    const sql = `SELECT * FROM teachers`
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql)
@@ -109,7 +109,7 @@ const readStudents = async () => {
 
 
 const readStudentInfo = async (id) => {
-    const sql = `SELECT * FROM dummyData WHERE id = ?`
+    const sql = `SELECT * FROM dummyData`
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql)
