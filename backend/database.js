@@ -1,4 +1,4 @@
-const dbConnection = require("./sqlite")
+const dbConnection = require("./sqlite");
 
 dbConnection
   .getDbConnection()
@@ -106,8 +106,10 @@ const readStudents = async () => {
     });
 }
 
+
+
 const readStudentInfo = async (id) => {
-    const sql = `SELECT * FROM dummyData`
+    const sql = `SELECT * FROM dummyData WHERE id = ?`
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql)
