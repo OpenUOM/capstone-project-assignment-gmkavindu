@@ -36,6 +36,8 @@ app.get("/listTeachers", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
+
+
 app.post("/getTeacherInfo", async function (req, res) {
   let reqBody = req.body;
   console.log("Request received to get Teacher Info");
