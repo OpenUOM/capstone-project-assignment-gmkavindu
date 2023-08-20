@@ -22,21 +22,17 @@ const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
 
-
-
 const readTeachers = async () => {
-    const sql = `SELECT * FROM teacher`
-    return new Promise((resolve, reject) => {
-        knex_db
-            .raw(sql)
-            .then((teachers) => {
-                resolve(teachers);
-            })
-            .catch((error) => {
-                reject(error);
-            });
-    });
-}
+    try {
+      const teachers = await knex_db("teacher").select("*");
+      return teachers;
+    } catch (error) {
+      throw error;
+    }
+  };
+  
+
+
 
 const readTeacherInfo = async (id) => {
     const sql = `SELECT * FROM dummyData`
