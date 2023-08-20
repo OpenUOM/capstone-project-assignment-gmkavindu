@@ -30,15 +30,11 @@ app.get("/dbinitialize", async function (req, res) {
 
 app.get("/listTeachers", async function (req, res) {
   console.log("Request received to list teachers");
-  try {
-    const teachers = await readTeachers();
-    res.status(200).json(teachers);
-  } catch (error) {
-    console.error("Error fetching teachers:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
+  let data = await readTeachers();
 
+  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify(data));
+});
 
 
 
