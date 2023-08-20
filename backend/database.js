@@ -22,8 +22,8 @@ const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
 
-const readTeachers = async (id, name, age, religion) => {
-    const sql = `SELECT * FROM dummyData`
+const readTeachers = async () => {
+    const sql = `SELECT * FROM teachers`
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql)
