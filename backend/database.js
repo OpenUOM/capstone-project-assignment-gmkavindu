@@ -22,7 +22,7 @@ const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
 
-const readTeachers = async () => {
+const readTeachers = async (id, name, age, religion) => {
     const sql = `SELECT * FROM dummyData`
     return new Promise((resolve, reject) => {
         knex_db
@@ -92,7 +92,7 @@ const deleteTeacher = async (id) => {
     });
 }
 
-const readStudents = async (id, name, age, religion) => {
+const readStudents = async () => {
     const sql = `SELECT * FROM dummyData`
     return new Promise((resolve, reject) => {
         knex_db
