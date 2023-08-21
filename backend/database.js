@@ -91,7 +91,6 @@ const deleteTeacher = async (id) => {
             });
     });
 }
-
 const readStudents = async () => {
     const sql = `SELECT * FROM student`
     return new Promise((resolve, reject) => {
@@ -105,11 +104,6 @@ const readStudents = async () => {
             });
     });
 }
-
-
-
-
-
 const readStudentInfo = async (id) => {
     const sql = `SELECT * FROM student`
     return new Promise((resolve, reject) => {
@@ -136,9 +130,6 @@ const addStudent = async (id, name, age, hometown) => {
             });
     });
 }
-
-
-
 
 const updateStudent = async (id, name, age, hometown) => {
     const sql = `UPDATE student SET name=?, age=?,hometown=? WHERE id=?`
