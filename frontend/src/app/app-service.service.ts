@@ -41,6 +41,8 @@ export class AppServiceService {
     return this.http.post(`/${this.ROOT_URL}/addTeacher`, payload)
   }
 
+  
+
   deleteTeacher(payload: Object){
     return this.http.post(`/${this.ROOT_URL}/deleteTeacher`, payload)
   }
